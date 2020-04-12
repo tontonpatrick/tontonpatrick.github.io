@@ -1,0 +1,113 @@
+\documentclass[10pt]{article}
+\usepackage{luatextra,xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage{textcomp}
+\usepackage{lscape}
+\usepackage{graphicx}
+\newcommand{\euro}{\eurologo{}}
+\usepackage{pst-plot,pstricks-add}
+\newtheorem{Ex}{Exemple}
+\newtheorem{Exo}{Exercice}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\setlength{\textheight}{23,5cm}
+\setlength{\voffset}{-1,5cm}
+\newcommand{\vect}[1]{\mathchoice%
+{\overrightarrow{\displaystyle\mathstrut#1\,\,}}%
+{\overrightarrow{\textstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptscriptstyle\mathstrut#1\,\,}}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+%\usepackage[dvips]{hyperref}
+\usepackage[frenchb]{babel}
+\usepackage[np]{numprint}
+
+\newcommand{\mili}[4]{\psgrid[subgriddiv=10, gridlabels=0, gridwidth=0.4pt, subgridwidth=0.4pt,gridcolor=brown!80,subgridcolor=brown!40](#1,#2)(#3,#4)}
+
+\begin{document}
+\setlength\parindent{0mm}
+\rhead{\textbf{2TSELT}}
+\lhead{\small Révision }
+\lfoot{\small{Révision}}
+\rfoot{\small{Février 2020}}
+\renewcommand \footrulewidth{.2pt}
+\pagestyle{fancy}
+\thispagestyle{empty}
+
+\begin{center}
+\vspace{0,5cm}
+
+{\Large \textbf{\decofourleft~Révision : devoir maison de synthèse }}
+\end{center}
+
+
+\begin{enumerate}
+\item Calculer la transformée de Laplace de $\cos(\directlua{tex.print(math.random(1,6))}t)\mathcal{U}(t)$.
+\item Déterminer l'originale de la fonction $\frac{1}{2}\times \frac{1}{p}-\frac{2}{p+1}+\frac{5}{2}\times \frac{1}{p+2}$
+\item Montrer que $\frac{p^{2}+1}{p^{2}+3p+2}=\frac{1}{2}\times \frac{1}{p}-\frac{2}{p+1}+\frac{5}{2}\times \frac{1}{p+2}$
+\item Calculer la transformée de Laplace de $y''(t)+3y'(t)+2y(t)$ avec $y(0)=1$ et $y'(0)=0$.
+\item On consdère la fonction $f(t)$, paire et $\pi$ périodique telle que :
+\begin{align*}
+f(t)=\begin{cases} \frac{pi}{2}-t & \text{ si }t\in [0;\frac{\pi}{2}] \\ 0 & \text{ si }t\in [\frac{\pi}{2};\pi] \end{cases}
+\end{align*}
+Représenter la fonction sur $[-2\pi;2\pi]$.
+\item Calculer le coefficient $a_{0}$ de la fonction précédente.
+\item Que valent les coefficients $b_{n}$ de la fonction précédente ? Justifier.
+\item Résoudre l'équation différentielle $y'(t)+3y(t)=0$.
+\item Montrer que $h(t)=t^e{-3t}$ est une solution particulère de $y'(t)+3y(t)=e^{-3t}$.
+\item Résoudre l'équation différentielle $y''(t)+2y'(t)+y(t)=0$.
+\item Montrer que $h(t)=t^{2}$ est une solution différentielle de $y''(t)+2y'(t)+y(t)=t^{2}+4t+2$.
+\item Résoudre l'équation différentielle $y''(t)-8y'(t)+25y(t)=0$.
+\item Montrer que $h(t)=2$ est une solution différentielle de $y''(t)-8y'(t)+25y(t)=50$.
+\item $X$ suit la loi binomiale $\mathcal{B}(50,0.0\directlua{tex.print(math.random(1,9))})$. Quelle est l'espérance de $X$ ?
+\item \begin{luacode}
+a=math.random(120,150)
+b=math.random(5,10)
+tex.print("$X$ suit une loi normale de paramètres $"..a.."$ et $"..b.."$, calculer $P("..a-b.."\\leq X\\leq "..a+b..")$")
+\end{luacode}
+\item \begin{luacode}
+a=math.random(120,150)
+b=math.random(11,15)
+tex.print("$X$ suit une loi normale de paramètres $"..a.."$ et $"..b.."$, déterminer $h>0$ tel que $P("..a.."-h\\leq X\\leq "..a.."+h)=0.95$")
+\end{luacode}
+\item  $X$ suit la loi de Poisson de paramètre $\directlua{tex.print(math.random(3,6))})$. Calculer $P(X\ge 7)$.
+\item Compléter le tableau suivant et donner les probabilités des événements ainsi que leurs intersections :
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+  &  E  &  $\bar{E}$ & Total\\
+\hline
+S &     &      $50$      &    $60$  \\
+\hline
+$\bar{S}$  &    &          &      \\
+\hline
+ Total &  $100$   &            &  $250$ \\
+\hline
+\end{tabular}
+\end{center}
+\item Déterminer $P_{S}(E)$.
+\item Déterminer un argument de $1+3\omega$ pour $\omega>0$.
+\end{enumerate}
+
+
+\end{document}
